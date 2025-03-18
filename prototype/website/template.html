@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{页面描述}}">
+  <title>{{页面标题}} - 公司名称</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- 页面头部 -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="{{LOGO图片地址}}" alt="公司名称">
+        </a>
+      </div>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="{{首页导航状态}}">首页</a></li>
+          <li><a href="products.html" class="{{产品导航状态}}">产品介绍</a></li>
+          <li><a href="news.html" class="{{新闻导航状态}}">新闻中心</a></li>
+          <li><a href="about.html" class="{{关于导航状态}}">关于我们</a></li>
+        </ul>
+        
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主体内容 -->
+  <main>
+    {{页面主体内容}}
+  </main>
+
+  <!-- 页面底部 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>关于我们</h3>
+          <p>{{公司简介}}</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="products.html#产品1">产品1</a></li>
+            <li><a href="products.html#产品2">产品2</a></li>
+            <li><a href="products.html#产品3">产品3</a></li>
+            <li><a href="products.html#产品4">产品4</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>联系我们</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> {{公司地址}}</li>
+            <li><i class="fas fa-phone"></i> {{联系电话}}</li>
+            <li><i class="fas fa-envelope"></i> {{联系邮箱}}</li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>关注我们</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-weixin"></i></a>
+            <a href="#"><i class="fab fa-weibo"></i></a>
+            <a href="#"><i class="fab fa-qq"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>Copyright &copy; <span class="current-year"></span> 公司名称 版权所有 | 备案号：{{备案号}}</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html> 

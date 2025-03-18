@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vapor Cloud - Premium Vaping Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header id="main-header" class="position-fixed w-100">
+        <div class="container-fluid">
+            <div class="top-bar d-flex justify-content-between align-items-center py-2">
+                <div class="social-language">
+                    <select class="form-select-sm border-0 bg-transparent" id="language-selector">
+                        <option value="en" selected>English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                    <div class="social-icons d-inline-block ms-3">
+                        <a href="#" class="text-decoration-none text-dark me-2"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-decoration-none text-dark me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-decoration-none text-dark me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="logo text-center">
+                    <a href="index.html">
+                        <h1 class="m-0">VAPOR CLOUD</h1>
+                    </a>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="text-decoration-none text-dark me-3"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-decoration-none text-dark me-3" id="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-decoration-none text-dark position-relative" id="cart-toggle">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light py-2">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <!-- 电子烟设备菜单 -->
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <span class="lang-en">Vape Devices</span>
+                                    <span class="lang-zh d-none">电子烟设备</span>
+                                </a>
+                                <div class="dropdown-menu p-3" style="width: 600px; max-width: 100vw;">
+                                    <div class="row">
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Pod Systems" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Pod Systems</span>
+                                                <span class="lang-zh d-none">小烟系统</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Box Mods" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Box Mods</span>
+                                                <span class="lang-zh d-none">盒子模组</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Vape Pens" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Vape Pens</span>
+                                                <span class="lang-zh d-none">笔式电子烟</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Disposables" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Disposables</span>
+                                                <span class="lang-zh d-none">一次性电子烟</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <!-- 电子烟油菜单 -->
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <span class="lang-en">E-Liquids</span>
+                                    <span class="lang-zh d-none">电子烟油</span>
+                                </a>
+                                <div class="dropdown-menu p-3" style="width: 600px; max-width: 100vw;">
+                                    <div class="row">
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Fruit Flavors" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Fruit Flavors</span>
+                                                <span class="lang-zh d-none">水果味</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Dessert Flavors" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Dessert Flavors</span>
+                                                <span class="lang-zh d-none">甜点味</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Menthol & Mint" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Menthol & Mint</span>
+                                                <span class="lang-zh d-none">薄荷味</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Tobacco Flavors" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Tobacco Flavors</span>
+                                                <span class="lang-zh d-none">烟草味</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <!-- 配件菜单 -->
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <span class="lang-en">Accessories</span>
+                                    <span class="lang-zh d-none">配件</span>
+                                </a>
+                                <div class="dropdown-menu p-3" style="width: 600px; max-width: 100vw;">
+                                    <div class="row">
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Replacement Coils" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Replacement Coils</span>
+                                                <span class="lang-zh d-none">替换线圈</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Batteries & Chargers" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Batteries & Chargers</span>
+                                                <span class="lang-zh d-none">电池和充电器</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Cases & Holders" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Cases & Holders</span>
+                                                <span class="lang-zh d-none">盒子和支架</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Tanks & Atomizers" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Tanks & Atomizers</span>
+                                                <span class="lang-zh d-none">储油仓和雾化器</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <!-- 套装菜单 -->
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <span class="lang-en">Starter Kits</span>
+                                    <span class="lang-zh d-none">入门套装</span>
+                                </a>
+                                <div class="dropdown-menu p-3" style="width: 600px; max-width: 100vw;">
+                                    <div class="row">
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Beginner Kits" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Beginner Kits</span>
+                                                <span class="lang-zh d-none">初学者套装</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Advanced Kits" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Advanced Kits</span>
+                                                <span class="lang-zh d-none">进阶套装</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 border-end">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Pod Kits" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Pod Kits</span>
+                                                <span class="lang-zh d-none">小烟套装</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="products.html" class="dropdown-item text-center d-flex flex-column">
+                                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Gift Sets" class="img-fluid rounded mb-2">
+                                                <span class="lang-en">Gift Sets</span>
+                                                <span class="lang-zh d-none">礼品套装</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <!-- 关于菜单 -->
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <span class="lang-en">About</span>
+                                    <span class="lang-zh d-none">关于我们</span>
+                                </a>
+                                <div class="dropdown-menu p-3">
+                                    <ul class="list-unstyled">
+                                        <li><a href="about.html" class="dropdown-item"><span class="lang-en">About Us</span><span class="lang-zh d-none">关于我们</span></a></li>
+                                        <li><a href="blog.html" class="dropdown-item"><span class="lang-en">Blog</span><span class="lang-zh d-none">博客</span></a></li>
+                                        <li><a href="contact.html" class="dropdown-item"><span class="lang-en">Contact Us</span><span class="lang-zh d-none">联系我们</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="position-fixed top-0 start-0 w-100 h-100 d-none">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="search-container bg-white p-4 rounded shadow w-75">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="m-0">
+                        <span class="lang-en">Search Products</span>
+                        <span class="lang-zh d-none">搜索产品</span>
+                    </h3>
+                    <button type="button" class="btn-close" id="search-close"></button>
+                </div>
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Enter keywords...">
+                        <button class="btn btn-dark" type="submit">
+                            <span class="lang-en">Search</span>
+                            <span class="lang-zh d-none">搜索</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="position-fixed top-0 end-0 h-100 bg-white shadow-lg d-none">
+        <div class="cart-container p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="m-0">
+                    <span class="lang-en">Cart (3)</span>
+                    <span class="lang-zh d-none">购物车 (3)</span>
+                </h3>
+                <button type="button" class="btn-close" id="cart-close"></button>
+            </div>
+            <div class="cart-items flex-grow-1 overflow-auto">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" class="img-fluid rounded-start" alt="Product">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Cloud Elite Pod</h5>
+                                <p class="card-text">$49.99 × 1</p>
+                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" class="img-fluid rounded-start" alt="Product">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Fruit Fusion E-Liquid</h5>
+                                <p class="card-text">$24.99 × 1</p>
+                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" class="img-fluid rounded-start" alt="Product">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Replacement Coils</h5>
+                                <p class="card-text">$15.99 × 1</p>
+                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer mt-4">
+                <div class="d-flex justify-content-between mb-3">
+                    <h5>
+                        <span class="lang-en">Total:</span>
+                        <span class="lang-zh d-none">总计:</span>
+                    </h5>
+                    <h5>$90.97</h5>
+                </div>
+                <div class="d-grid gap-2">
+                    <a href="cart.html" class="btn btn-outline-dark">
+                        <span class="lang-en">View Cart</span>
+                        <span class="lang-zh d-none">查看购物车</span>
+                    </a>
+                    <a href="checkout.html" class="btn btn-dark">
+                        <span class="lang-en">Checkout</span>
+                        <span class="lang-zh d-none">结算</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="position-relative vh-100">
+        <div class="hero-image position-absolute w-100 h-100" style="background: url('https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966') no-repeat center center; background-size: cover;"></div>
+        <div class="hero-content position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <h1 class="display-2 fw-bold mb-4">
+                <span class="lang-en">PREMIUM VAPING EXPERIENCE</span>
+                <span class="lang-zh d-none">顶级电子烟体验</span>
+            </h1>
+            <p class="lead mb-4">
+                <span class="lang-en">Discover the finest vaping devices and e-liquids for an exceptional experience</span>
+                <span class="lang-zh d-none">探索最优质的电子烟设备和烟油，享受非凡体验</span>
+            </p>
+            <a href="products.html" class="btn btn-light btn-lg px-4 py-2">
+                <span class="lang-en">SHOP NOW</span>
+                <span class="lang-zh d-none">立即选购</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 畅销产品部分 -->
+    <section id="best-sellers" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5">
+                    <span class="lang-en">Best Sellers</span>
+                    <span class="lang-zh d-none">畅销产品</span>
+                </h2>
+                <p class="text-muted">
+                    <span class="lang-en">Our most popular products that customers love</span>
+                    <span class="lang-zh d-none">我们最受顾客喜爱的热门产品</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Best Seller Pod" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-danger">Hot</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Cloud Elite Pod System</a></h5>
+                            <p class="product-price mb-0">$49.99</p>
+                            <div class="product-rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-2">(124)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Best Seller E-Liquid" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-danger">Best Seller</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Berry Blast E-Liquid</a></h5>
+                            <p class="product-price mb-0">$24.99</p>
+                            <div class="product-rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-muted ms-2">(89)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Best Seller Box Mod" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-danger">Popular</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Vapor Tech Box Mod</a></h5>
+                            <p class="product-price mb-0">$79.99</p>
+                            <div class="product-rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-muted ms-2">(67)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="Best Seller Coils" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-danger">Top Rated</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Premium Mesh Coils (5-Pack)</a></h5>
+                            <p class="product-price mb-0">$19.99</p>
+                            <div class="product-rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-2">(103)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html?category=best-sellers" class="btn btn-outline-dark px-4 py-2">
+                    <span class="lang-en">View All Best Sellers</span>
+                    <span class="lang-zh d-none">查看所有畅销产品</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5">
+                    <span class="lang-en">New Arrivals</span>
+                    <span class="lang-zh d-none">新品上市</span>
+                </h2>
+                <p class="text-muted">
+                    <span class="lang-en">Check out our latest vaping products</span>
+                    <span class="lang-zh d-none">浏览我们最新的电子烟产品</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="New Vape Pod" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-primary">New</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">NexGen Pod System</a></h5>
+                            <p class="product-price mb-0">$59.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="New E-Liquid" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-primary">New</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Tropical Breeze E-Liquid</a></h5>
+                            <p class="product-price mb-0">$22.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="New Mod" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-primary">New</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Pro Series Box Mod</a></h5>
+                            <p class="product-price mb-0">$89.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <div class="product-image position-relative">
+                            <a href="product-detail.html">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" alt="New Accessory" class="img-fluid">
+                            </a>
+                            <div class="product-tags position-absolute top-0 start-0 p-2">
+                                <span class="badge bg-primary">New</span>
+                            </div>
+                            <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info p-3 text-center">
+                            <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">Premium Carrying Case</a></h5>
+                            <p class="product-price mb-0">$34.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html?category=new" class="btn btn-outline-dark px-4 py-2">
+                    <span class="lang-en">View All New Arrivals</span>
+                    <span class="lang-zh d-none">查看所有新品</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="special-offers" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5">
+                    <span class="lang-en">Special Offers</span>
+                    <span class="lang-zh d-none">特价优惠</span>
+                </h2>
+                <p class="text-muted">
+                    <span class="lang-en">Limited time deals on premium vaping products</span>
+                    <span class="lang-zh d-none">限时优惠高品质电子烟产品</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 rounded-0 overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" class="img-fluid h-100" alt="Starter Kit Deal" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body d-flex flex-column h-100 justify-content-center p-4">
+                                    <div class="mb-3">
+                                        <span class="badge bg-danger fw-bold mb-2">30% OFF</span>
+                                        <h3 class="card-title">
+                                            <span class="lang-en">Complete Starter Kit</span>
+                                            <span class="lang-zh d-none">完整入门套装</span>
+                                        </h3>
+                                        <p class="card-text text-muted">
+                                            <span class="lang-en">Everything you need to start vaping in one package</span>
+                                            <span class="lang-zh d-none">一套包含所有开始电子烟所需的产品</span>
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="fs-4 fw-bold mb-0">
+                                            <span class="text-decoration-line-through text-muted me-2">$129.99</span>
+                                            <span class="text-danger">$89.99</span>
+                                        </p>
+                                    </div>
+                                    <a href="product-detail.html" class="btn btn-dark">
+                                        <span class="lang-en">Shop Now</span>
+                                        <span class="lang-zh d-none">立即购买</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 rounded-0 overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="https://beardofgod.com/cdn/shop/files/Photoroom_20240726_193533_600x.png?v=1722036966" class="img-fluid h-100" alt="E-Liquid Bundle" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body d-flex flex-column h-100 justify-content-center p-4">
+                                    <div class="mb-3">
+                                        <span class="badge bg-danger fw-bold mb-2">Buy 2 Get 1 Free</span>
+                                        <h3 class="card-title">
+                                            <span class="lang-en">Premium E-Liquid Bundle</span>
+                                            <span class="lang-zh d-none">优质电子烟油套装</span>
+                                        </h3>
+                                        <p class="card-text text-muted">
+                                            <span class="lang-en">Mix and match your favorite flavors</span>
+                                            <span class="lang-zh d-none">混合搭配您喜爱的口味</span>
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="fs-4 fw-bold mb-0">
+                                            <span class="text-danger">$44.99</span>
+                                            <span class="text-muted fs-6">($22.50 per bottle)</span>
+                                        </p>
+                                    </div>
+                                    <a href="product-detail.html" class="btn btn-dark">
+                                        <span class="lang-en">Shop Now</span>
+                                        <span class="lang-zh d-none">立即购买</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5">
+                    <span class="lang-en">What Our Customers Say</span>
+                    <span class="lang-zh d-none">客户评价</span>
+                </h2>
+                <p class="text-muted">
+                    <span class="lang-en">Read testimonials from our satisfied customers</span>
+                    <span class="lang-zh d-none">阅读来自我们满意客户的评价</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-item bg-white p-4 rounded shadow-sm">
+                        <div class="testimonial-quote mb-3">
+                            <i class="fas fa-quote-left text-muted me-2"></i>
+                            The Cloud Elite Pod System is by far the best vaping device I've ever owned. Smooth hits and great flavor production!
+                        </div>
+                        <div class="testimonial-rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Michael Johnson</h6>
+                                    <small class="text-muted">Verified Customer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-item bg-white p-4 rounded shadow-sm">
+                        <div class="testimonial-quote mb-3">
+                            <i class="fas fa-quote-left text-muted me-2"></i>
+                            Fast shipping and excellent customer service. The Fruit Fusion e-liquid has become my daily favorite!
+                        </div>
+                        <div class="testimonial-rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">Sarah Williams</h6>
+                                    <small class="text-muted">Verified Customer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-item bg-white p-4 rounded shadow-sm">
+                        <div class="testimonial-quote mb-3">
+                            <i class="fas fa-quote-left text-muted me-2"></i>
+                            Vapor Cloud has the best selection of products I've found online. Their prices are great and shipping is always prompt.
+                        </div>
+                        <div class="testimonial-rating text-warning mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Customer" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">David Thompson</h6>
+                                    <small class="text-muted">Verified Customer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="display-5 mb-4">Contact Us</h2>
+                    <p class="mb-4">Have questions or need assistance? Our customer service team is here to help you with any inquiries.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> 123 Vaping Street, Suite 101, New York, NY 10001</li>
+                        <li class="mb-3"><i class="fas fa-phone me-2"></i> +1 (800) 123-4567</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-2"></i> support@vaporcloud.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <form class="p-4 bg-white rounded shadow">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Vapor Cloud</h5>
+                    <p>Providing premium quality vaping products for enthusiasts and beginners alike. We're dedicated to offering you the best vaping experience.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white">All Products</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Help Center</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Shipping Information</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Return Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Payment Methods</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter to receive updates on new products and promotions.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-light" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="payment-methods mt-4">
+                        <i class="fab fa-cc-visa me-2 fs-3"></i>
+                        <i class="fab fa-cc-mastercard me-2 fs-3"></i>
+                        <i class="fab fa-cc-paypal me-2 fs-3"></i>
+                        <i class="fab fa-cc-amex fs-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-3 bg-darker text-white text-center">
+        <div class="container">
+            <p class="m-0">&copy; 2023 Vapor Cloud. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 语言切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSelector = document.getElementById('language-selector');
+            
+            // 语言切换函数
+            function switchLanguage(lang) {
+                const elementsEn = document.querySelectorAll('.lang-en');
+                const elementsZh = document.querySelectorAll('.lang-zh');
+                
+                if (lang === 'zh') {
+                    elementsEn.forEach(el => el.classList.add('d-none'));
+                    elementsZh.forEach(el => el.classList.remove('d-none'));
+                    document.documentElement.lang = 'zh';
+                } else {
+                    elementsEn.forEach(el => el.classList.remove('d-none'));
+                    elementsZh.forEach(el => el.classList.add('d-none'));
+                    document.documentElement.lang = 'en';
+                }
+            }
+            
+            // 监听语言选择器变化
+            languageSelector.addEventListener('change', function() {
+                switchLanguage(this.value);
+            });
+            
+            // 初始化语言设置
+            switchLanguage(languageSelector.value);
+        });
+    </script>
+    <style>
+        .dropdown-menu .dropdown-item {
+            padding: 0.5rem;
+            height: 100%;
+        }
+        
+        .dropdown-menu .dropdown-item img {
+            max-height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        .border-end {
+            border-right: 1px solid #dee2e6 !important;
+        }
+
+        .dropdown-menu .row {
+            margin: 0;
+        }
+    </style>
+</body>
+</html> 

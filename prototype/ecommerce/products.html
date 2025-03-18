@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部商品 - 时尚电商</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header id="main-header" class="position-fixed w-100">
+        <div class="container-fluid">
+            <div class="top-bar d-flex justify-content-between align-items-center py-2">
+                <div class="social-language">
+                    <select class="form-select-sm border-0 bg-transparent">
+                        <option selected>中国 (CNY ¥)</option>
+                        <option>美国 (USD $)</option>
+                        <option>欧洲 (EUR €)</option>
+                    </select>
+                    <div class="social-icons d-inline-block ms-3">
+                        <a href="#" class="text-decoration-none text-dark me-2"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-decoration-none text-dark me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-decoration-none text-dark me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="logo text-center">
+                    <a href="index.html">
+                        <h1 class="m-0">FASHION STORE</h1>
+                    </a>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="text-decoration-none text-dark me-3"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-decoration-none text-dark me-3" id="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-decoration-none text-dark position-relative" id="cart-toggle">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light py-2">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    男士系列
+                                </a>
+                                <div class="dropdown-menu mega-menu p-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>服装类别</h5>
+                                            <ul class="list-unstyled">
+                                                <li><a href="products.html" class="dropdown-item">T恤</a></li>
+                                                <li><a href="products.html" class="dropdown-item">衬衫</a></li>
+                                                <li><a href="products.html" class="dropdown-item">裤子</a></li>
+                                                <li><a href="products.html" class="dropdown-item">外套</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h5>热门系列</h5>
+                                            <ul class="list-unstyled">
+                                                <li><a href="products.html" class="dropdown-item">新品上市</a></li>
+                                                <li><a href="products.html" class="dropdown-item">畅销单品</a></li>
+                                                <li><a href="products.html" class="dropdown-item">限时折扣</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="https://via.placeholder.com/200x150" alt="男士系列" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown mx-3">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    女士系列
+                                </a>
+                                <div class="dropdown-menu mega-menu p-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>服装类别</h5>
+                                            <ul class="list-unstyled">
+                                                <li><a href="products.html" class="dropdown-item">连衣裙</a></li>
+                                                <li><a href="products.html" class="dropdown-item">上衣</a></li>
+                                                <li><a href="products.html" class="dropdown-item">裤子</a></li>
+                                                <li><a href="products.html" class="dropdown-item">外套</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h5>热门系列</h5>
+                                            <ul class="list-unstyled">
+                                                <li><a href="products.html" class="dropdown-item">新品上市</a></li>
+                                                <li><a href="products.html" class="dropdown-item">畅销单品</a></li>
+                                                <li><a href="products.html" class="dropdown-item">限时折扣</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <img src="https://via.placeholder.com/200x150" alt="女士系列" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" href="products.html">热卖商品</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="about.html">关于我们</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="blog.html">博客</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="contact.html">联系我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-title py-5 bg-light">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4">全部商品</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">首页</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">全部商品</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品筛选和列表 -->
+    <section class="products-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- 筛选侧边栏 -->
+                <div class="col-lg-3">
+                    <div class="filters-container">
+                        <div class="filter-group mb-4">
+                            <h5 class="border-bottom pb-2">分类</h5>
+                            <div class="form-check py-1">
+                                <input class="form-check-input" type="checkbox" id="category1" checked>
+                                <label class="form-check-label" for="category1">全部</label>
+                            </div>
+                            <div class="form-check py-1">
+                                <input class="form-check-input" type="checkbox" id="category2">
+                                <label class="form-check-label" for="category2">男士</label>
+                            </div>
+                            <div class="form-check py-1">
+                                <input class="form-check-input" type="checkbox" id="category3">
+                                <label class="form-check-label" for="category3">女士</label>
+                            </div>
+                            <div class="form-check py-1">
+                                <input class="form-check-input" type="checkbox" id="category4">
+                                <label class="form-check-label" for="category4">配饰</label>
+                            </div>
+                        </div>
+                        <div class="filter-group mb-4">
+                            <h5 class="border-bottom pb-2">价格区间</h5>
+                            <div class="range-slider mb-3">
+                                <input type="range" class="form-range" min="0" max="1000" step="50" id="priceRange">
+                                <div class="d-flex justify-content-between">
+                                    <span>¥0</span>
+                                    <span>¥1000+</span>
+                                </div>
+                            </div>
+                            <div class="price-inputs d-flex">
+                                <div class="input-group input-group-sm me-2">
+                                    <span class="input-group-text">¥</span>
+                                    <input type="number" class="form-control" placeholder="最低" min="0">
+                                </div>
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">¥</span>
+                                    <input type="number" class="form-control" placeholder="最高" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-group mb-4">
+                            <h5 class="border-bottom pb-2">颜色</h5>
+                            <div class="color-options d-flex flex-wrap">
+                                <div class="color-option me-2 mb-2" style="background-color: #000000;" title="黑色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #FFFFFF; border: 1px solid #ddd;" title="白色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #FF0000;" title="红色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #0000FF;" title="蓝色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #FFFF00;" title="黄色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #00FF00;" title="绿色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #FFA500;" title="橙色"></div>
+                                <div class="color-option me-2 mb-2" style="background-color: #A52A2A;" title="棕色"></div>
+                            </div>
+                        </div>
+                        <div class="filter-group mb-4">
+                            <h5 class="border-bottom pb-2">尺码</h5>
+                            <div class="size-options d-flex flex-wrap">
+                                <button class="btn btn-outline-secondary btn-sm me-2 mb-2">XS</button>
+                                <button class="btn btn-outline-secondary btn-sm me-2 mb-2">S</button>
+                                <button class="btn btn-outline-secondary btn-sm me-2 mb-2">M</button>
+                                <button class="btn btn-outline-secondary btn-sm me-2 mb-2">L</button>
+                                <button class="btn btn-outline-secondary btn-sm me-2 mb-2">XL</button>
+                                <button class="btn btn-outline-secondary btn-sm me-2 mb-2">XXL</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark w-100">应用筛选</button>
+                    </div>
+                </div>
+                
+                <!-- 商品列表 -->
+                <div class="col-lg-9">
+                    <div class="products-header d-flex justify-content-between align-items-center mb-4">
+                        <div class="results-count">
+                            显示 <strong>1-12</strong> 个商品（共 <strong>36</strong> 个）
+                        </div>
+                        <div class="sort-options d-flex align-items-center">
+                            <label class="me-2">排序方式:</label>
+                            <select class="form-select form-select-sm" style="width: auto;">
+                                <option selected>推荐</option>
+                                <option>价格: 低到高</option>
+                                <option>价格: 高到低</option>
+                                <option>最新上架</option>
+                                <option>畅销</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-tags position-absolute top-0 start-0 p-2">
+                                        <span class="badge bg-danger">热卖</span>
+                                    </div>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">经典纯棉T恤</a></h5>
+                                    <p class="product-price mb-0">¥199.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-tags position-absolute top-0 start-0 p-2">
+                                        <span class="badge bg-primary">新品</span>
+                                    </div>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">休闲牛仔裤</a></h5>
+                                    <p class="product-price mb-0">¥299.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">时尚连衣裙</a></h5>
+                                    <p class="product-price mb-0">¥399.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-tags position-absolute top-0 start-0 p-2">
+                                        <span class="badge bg-success">折扣</span>
+                                    </div>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">夹克外套</a></h5>
+                                    <p class="product-price mb-0"><span class="text-decoration-line-through text-muted me-2">¥599.00</span>¥499.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">格纹衬衫</a></h5>
+                                    <p class="product-price mb-0">¥259.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-tags position-absolute top-0 start-0 p-2">
+                                        <span class="badge bg-primary">新品</span>
+                                    </div>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">运动休闲鞋</a></h5>
+                                    <p class="product-price mb-0">¥459.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">经典太阳镜</a></h5>
+                                    <p class="product-price mb-0">¥199.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-tags position-absolute top-0 start-0 p-2">
+                                        <span class="badge bg-success">折扣</span>
+                                    </div>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">真皮手提包</a></h5>
+                                    <p class="product-price mb-0"><span class="text-decoration-line-through text-muted me-2">¥799.00</span>¥599.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image position-relative">
+                                    <a href="product-detail.html">
+                                        <img src="https://via.placeholder.com/300" alt="商品图片" class="img-fluid">
+                                    </a>
+                                    <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x p-2 w-100 text-center opacity-0">
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-shopping-bag"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-heart"></i></button>
+                                        <button class="btn btn-sm btn-dark mx-1"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info p-3 text-center">
+                                    <h5 class="product-title"><a href="product-detail.html" class="text-decoration-none text-dark">纯羊毛围巾</a></h5>
+                                    <p class="product-price mb-0">¥189.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 分页 -->
+                    <nav aria-label="Page navigation" class="my-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Fashion Store</h5>
+                    <p>提供高品质的时尚服饰，满足您的多样化需求。我们致力于为您提供最优质的购物体验。</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">首页</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white">全部商品</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">关于我们</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white">博客</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">帮助中心</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">配送信息</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">退换政策</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">付款方式</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">常见问题</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">订阅通讯</h5>
+                    <p>订阅我们的通讯，获取最新的产品和促销信息。</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="您的电子邮箱" required>
+                            <button class="btn btn-light" type="submit">订阅</button>
+                        </div>
+                    </form>
+                    <div class="payment-methods mt-4">
+                        <i class="fab fa-cc-visa me-2 fs-3"></i>
+                        <i class="fab fa-cc-mastercard me-2 fs-3"></i>
+                        <i class="fab fa-cc-paypal me-2 fs-3"></i>
+                        <i class="fab fa-alipay fs-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-3 bg-darker text-white text-center">
+        <div class="container">
+            <p class="m-0">&copy; 2023 Fashion Store. 保留所有权利。</p>
+        </div>
+    </div>
+
+    <!-- 脚本引用 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

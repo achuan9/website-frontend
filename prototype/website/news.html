@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="公司新闻中心 - 了解最新动态和行业资讯">
+  <title>新闻中心 - 公司名称</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* 新闻页特有样式 */
+    .news-banner {
+      height: 300px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x300');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    
+    .news-banner h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .news-banner p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .news-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+    
+    .news-list-wrapper {
+      margin-bottom: 40px;
+    }
+    
+    .news-item {
+      display: flex;
+      margin-bottom: 30px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .news-item:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+    }
+    
+    .news-item-img {
+      width: 300px;
+      min-width: 300px;
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .news-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .news-item:hover .news-item-img img {
+      transform: scale(1.05);
+    }
+    
+    .news-item-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+    
+    .news-item-date {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .news-item-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .news-item-excerpt {
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .news-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .sidebar-widget {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .sidebar-widget h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      color: var(--secondary-color);
+    }
+    
+    .recent-posts li {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #eee;
+    }
+    
+    .recent-posts li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    
+    .recent-posts h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    .recent-posts .post-date {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .category-list li {
+      margin-bottom: 10px;
+    }
+    
+    .category-list a {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .category-count {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+    
+    .news-detail {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .news-detail-header {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .news-detail-title {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .news-detail-meta {
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .news-detail-content {
+      line-height: 1.8;
+    }
+    
+    .news-detail-content p {
+      margin-bottom: 20px;
+    }
+    
+    .news-detail-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .news-detail-footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .news-tags {
+      margin-bottom: 20px;
+    }
+    
+    .news-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #f1f1f1;
+      border-radius: 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    
+    .news-tag:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .news-share {
+      display: flex;
+      align-items: center;
+    }
+    
+    .news-share span {
+      margin-right: 15px;
+    }
+    
+    .news-share a {
+      margin-right: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    
+    .news-share a:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .page-item {
+      margin: 0 5px;
+    }
+    
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+    
+    .page-link.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .page-link:hover:not(.active) {
+      background: #f1f1f1;
+    }
+    
+    @media (max-width: 992px) {
+      .news-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .news-sidebar {
+        position: static;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .news-item {
+        flex-direction: column;
+      }
+      
+      .news-item-img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 页面头部 -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://via.placeholder.com/150x50" alt="公司名称">
+        </a>
+      </div>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="products.html">产品介绍</a></li>
+          <li><a href="news.html" class="active">新闻中心</a></li>
+          <li><a href="about.html">关于我们</a></li>
+        </ul>
+        
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主体内容 -->
+  <main>
+    <!-- 新闻banner -->
+    <section class="news-banner">
+      <div class="container">
+        <h1 class="animate-on-scroll">新闻中心</h1>
+        <p class="animate-on-scroll">了解我们的最新动态和行业资讯</p>
+      </div>
+    </section>
+    
+    <!-- 新闻列表 -->
+    <section class="section">
+      <div class="container">
+        <div class="news-content">
+          <div class="news-list-wrapper">
+            <!-- 新闻列表 -->
+            <div class="news-list">
+              <article class="news-item animate-on-scroll" id="新闻1">
+                <div class="news-item-img">
+                  <img src="https://via.placeholder.com/600x400" alt="新闻1">
+                </div>
+                <div class="news-item-content">
+                  <div class="news-item-date">
+                    <i class="far fa-calendar-alt"></i> 2024-03-15
+                  </div>
+                  <h3 class="news-item-title">
+                    <a href="news-detail.html">公司荣获行业最佳服务奖</a>
+                  </h3>
+                  <p class="news-item-excerpt">近日，公司凭借出色的服务质量和客户满意度，荣获2024年度行业最佳服务奖。这是对公司多年来坚持以客户为中心，不断提升服务质量的认可和肯定。</p>
+                  <a href="news-detail.html" class="btn btn-outline">阅读全文</a>
+                </div>
+              </article>
+              
+              <article class="news-item animate-on-scroll" id="新闻2">
+                <div class="news-item-img">
+                  <img src="https://via.placeholder.com/600x400" alt="新闻2">
+                </div>
+                <div class="news-item-content">
+                  <div class="news-item-date">
+                    <i class="far fa-calendar-alt"></i> 2024-03-02
+                  </div>
+                  <h3 class="news-item-title">
+                    <a href="news-detail.html">公司发布全新产品，引领行业发展</a>
+                  </h3>
+                  <p class="news-item-excerpt">公司近日隆重发布全新产品，这款产品采用了最新技术，具有多项创新功能。产品发布会吸引了众多行业专家和客户参与，获得了广泛好评。</p>
+                  <a href="news-detail.html" class="btn btn-outline">阅读全文</a>
+                </div>
+              </article>
+              
+              <article class="news-item animate-on-scroll" id="新闻3">
+                <div class="news-item-img">
+                  <img src="https://via.placeholder.com/600x400" alt="新闻3">
+                </div>
+                <div class="news-item-content">
+                  <div class="news-item-date">
+                    <i class="far fa-calendar-alt"></i> 2024-02-18
+                  </div>
+                  <h3 class="news-item-title">
+                    <a href="news-detail.html">公司与多家知名企业达成战略合作</a>
+                  </h3>
+                  <p class="news-item-excerpt">为进一步扩大业务范围，提升市场竞争力，公司近日与多家知名企业签署了战略合作协议。此次合作将为公司带来更多资源和机会，共同开发新市场。</p>
+                  <a href="news-detail.html" class="btn btn-outline">阅读全文</a>
+                </div>
+              </article>
+              
+              <article class="news-item animate-on-scroll">
+                <div class="news-item-img">
+                  <img src="https://via.placeholder.com/600x400" alt="新闻4">
+                </div>
+                <div class="news-item-content">
+                  <div class="news-item-date">
+                    <i class="far fa-calendar-alt"></i> 2024-02-05
+                  </div>
+                  <h3 class="news-item-title">
+                    <a href="news-detail.html">公司参加2024年行业展览会，展示创新成果</a>
+                  </h3>
+                  <p class="news-item-excerpt">2024年行业展览会于上周在北京国际展览中心举行，公司作为重要参展商，展示了最新的产品和技术成果，吸引了众多参观者和潜在客户。</p>
+                  <a href="news-detail.html" class="btn btn-outline">阅读全文</a>
+                </div>
+              </article>
+              
+              <article class="news-item animate-on-scroll">
+                <div class="news-item-img">
+                  <img src="https://via.placeholder.com/600x400" alt="新闻5">
+                </div>
+                <div class="news-item-content">
+                  <div class="news-item-date">
+                    <i class="far fa-calendar-alt"></i> 2024-01-20
+                  </div>
+                  <h3 class="news-item-title">
+                    <a href="news-detail.html">公司举办年度客户交流会，共话行业未来</a>
+                  </h3>
+                  <p class="news-item-excerpt">公司于上周举办了2024年度客户交流会，来自全国各地的客户代表参加了此次活动。会议期间，公司分享了行业发展趋势和未来规划，并听取了客户的宝贵意见。</p>
+                  <a href="news-detail.html" class="btn btn-outline">阅读全文</a>
+                </div>
+              </article>
+            </div>
+            
+            <!-- 分页 -->
+            <div class="pagination animate-on-scroll">
+              <div class="page-item">
+                <a href="#" class="page-link active">1</a>
+              </div>
+              <div class="page-item">
+                <a href="#" class="page-link">2</a>
+              </div>
+              <div class="page-item">
+                <a href="#" class="page-link">3</a>
+              </div>
+              <div class="page-item">
+                <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 侧边栏 -->
+          <aside class="news-sidebar">
+            <!-- 搜索框 -->
+            <div class="sidebar-widget animate-on-scroll">
+              <h3>搜索</h3>
+              <div class="search-form">
+                <form action="#" method="get">
+                  <div class="form-group" style="display: flex;">
+                    <input type="text" name="search" placeholder="搜索新闻..." style="flex-grow: 1; margin-right: 10px;">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <!-- 新闻分类 -->
+            <div class="sidebar-widget animate-on-scroll">
+              <h3>新闻分类</h3>
+              <ul class="category-list">
+                <li><a href="#">公司新闻 <span class="category-count">12</span></a></li>
+                <li><a href="#">行业资讯 <span class="category-count">8</span></a></li>
+                <li><a href="#">产品动态 <span class="category-count">6</span></a></li>
+                <li><a href="#">技术分享 <span class="category-count">5</span></a></li>
+                <li><a href="#">活动公告 <span class="category-count">4</span></a></li>
+              </ul>
+            </div>
+            
+            <!-- 最新文章 -->
+            <div class="sidebar-widget animate-on-scroll">
+              <h3>最新文章</h3>
+              <ul class="recent-posts">
+                <li>
+                  <h4><a href="#">公司荣获行业最佳服务奖</a></h4>
+                  <div class="post-date"><i class="far fa-calendar-alt"></i> 2024-03-15</div>
+                </li>
+                <li>
+                  <h4><a href="#">公司发布全新产品，引领行业发展</a></h4>
+                  <div class="post-date"><i class="far fa-calendar-alt"></i> 2024-03-02</div>
+                </li>
+                <li>
+                  <h4><a href="#">公司与多家知名企业达成战略合作</a></h4>
+                  <div class="post-date"><i class="far fa-calendar-alt"></i> 2024-02-18</div>
+                </li>
+                <li>
+                  <h4><a href="#">公司参加2024年行业展览会，展示创新成果</a></h4>
+                  <div class="post-date"><i class="far fa-calendar-alt"></i> 2024-02-05</div>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- 热门标签 -->
+            <div class="sidebar-widget animate-on-scroll">
+              <h3>热门标签</h3>
+              <div class="news-tags">
+                <a href="#" class="news-tag">公司新闻</a>
+                <a href="#" class="news-tag">产品发布</a>
+                <a href="#" class="news-tag">行业动态</a>
+                <a href="#" class="news-tag">技术创新</a>
+                <a href="#" class="news-tag">合作伙伴</a>
+                <a href="#" class="news-tag">客户案例</a>
+                <a href="#" class="news-tag">企业文化</a>
+                <a href="#" class="news-tag">市场趋势</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 订阅我们 -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="animate-on-scroll">订阅我们</h2>
+          <p class="animate-on-scroll">第一时间获取最新资讯和动态</p>
+        </div>
+        
+        <div class="subscribe-form animate-on-scroll">
+          <form action="#" method="post">
+            <div class="form-group" style="display: flex; max-width: 600px; margin: 0 auto;">
+              <input type="email" name="email" placeholder="请输入您的邮箱..." required style="flex-grow: 1; margin-right: 10px;">
+              <button type="submit" class="btn btn-primary">订阅</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页面底部 -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>关于我们</h3>
+          <p>公司名称是一家专业的服务提供商，致力于为各行业客户提供全方位的解决方案。</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="products.html#产品1">产品一</a></li>
+            <li><a href="products.html#产品2">产品二</a></li>
+            <li><a href="products.html#产品3">产品三</a></li>
+            <li><a href="products.html#产品4">产品四</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>联系我们</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 北京市朝阳区xxx街道xxx大厦</li>
+            <li><i class="fas fa-phone"></i> 400-123-4567</li>
+            <li><i class="fas fa-envelope"></i> info@company.com</li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>关注我们</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-weixin"></i></a>
+            <a href="#"><i class="fab fa-weibo"></i></a>
+            <a href="#"><i class="fab fa-qq"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>Copyright &copy; <span class="current-year"></span> 公司名称 版权所有 | 备案号：京ICP备XXXXXXXX号</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html> 
