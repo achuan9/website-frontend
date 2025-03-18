@@ -1,0 +1,68 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "products": "Products",
+    "contact": "Contact Us",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "readMore": "Read More"
+  },
+  "header": {
+    "language": "Language"
+  },
+  "footer": {
+    "companyInfo": "Company Info",
+    "companyDesc": "We are a company focused on providing high-quality products and services, dedicated to creating value for our customers.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactInfo": "Contact Info",
+    "address": "88 Jianguo Road, Chaoyang District, Beijing, China",
+    "phone": "+86 10 8888 8888",
+    "email": "contact@company.com",
+    "copyright": "Copyright © {year} Company Website. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "sitemap": "Sitemap"
+  },
+  "home": {
+    "hero": {
+      "title": "Innovative Solutions for Business Growth",
+      "subtitle": "We provide professional services and products to help your business achieve digital transformation",
+      "cta": "Explore Our Services",
+      "contact": "Contact Us",
+      "trustedBy": "Trusted By"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Professional Team, Excellent Service",
+      "description": "We are a company with 10 years of industry experience, focused on providing high-quality products and services to our customers. Our team consists of industry experts dedicated to creating value for our clients.",
+      "satisfaction": "Customer Satisfaction",
+      "team": "Professional Team",
+      "innovation": "Innovative Technology",
+      "quality": "Quality Service",
+      "experience": "Industry Experience"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Professional Solutions",
+      "description": "We provide comprehensive services to meet your various needs. From consulting to implementation, we can provide you with professional support.",
+      "consulting": {
+        "title": "Consulting Services",
+        "description": "Professional consulting services to help you analyze requirements and develop implementation plans.",
+        "features": ["Requirements Analysis", "Strategic Planning", "Solution Design"]
+      },
+      "development": {
+        "title": "Product Development",
+        "description": "Customized product development services to meet your specific business process needs.",
+        "features": ["Custom Development", "System Integration", "User Experience Design"]
+      },
+      "support": {
+        "title": "Technical Support",
+        "description": "Comprehensive technical support and maintenance services to ensure system stability.",
+        "features": ["24/7 Support", "Regular Maintenance", "Quick Issue Resolution"]
+      }
+    }
+  }
+} 

@@ -1,0 +1,25 @@
+{
+  "name": "company-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "企业官网项目，包含前台和管理后台",
+  "scripts": {
+    "dev:admin": "pnpm --filter @company/admin dev",
+    "dev:website": "pnpm --filter @company/website dev",
+    "dev": "concurrently \"pnpm dev:admin\" \"pnpm dev:website\"",
+    "build:admin": "pnpm --filter @company/admin build",
+    "build:website": "pnpm --filter @company/website build",
+    "build:all": "pnpm build:admin && pnpm build:website",
+    "lint:admin": "pnpm --filter @company/admin lint",
+    "lint:website": "pnpm --filter @company/website lint",
+    "lint:all": "pnpm lint:admin && pnpm lint:website"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=7.0.0"
+  }
+}
